@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import { f7App, f7Panel, f7View, f7Statusbar } from "framework7-vue";
-import routes from "./routes";
+import { f7App, f7Panel, f7View, f7Statusbar } from 'framework7-vue'
+import routes from './routes'
 
 export default {
   components: {
@@ -24,17 +24,17 @@ export default {
     f7View,
     f7Statusbar
   },
-  data() {
+  data () {
     // Demo Theme
-    let theme = "auto";
-    if (document.location.search.indexOf("theme=") >= 0) {
-      theme = document.location.search.split("theme=")[1].split("&")[0];
+    let theme = 'auto'
+    if (document.location.search.indexOf('theme=') >= 0) {
+      theme = document.location.search.split('theme=')[1].split('&')[0]
     }
 
     return {
       f7Params: {
-        name: "MI NOTE",
-        id: "io.github.NieLamu",
+        name: 'MI NOTE',
+        id: 'io.github.NieLamu',
         theme,
         routes,
         popup: {
@@ -50,15 +50,15 @@ export default {
           closeOnEscape: true
         }
       }
-    };
+    }
   },
-  mounted() {
+  mounted () {
     this.$f7ready(f7 => {
-      console.log("s", f7);
-      f7.dialog.alert("Component mounted");
-    });
+      console.log('s', f7)
+      f7.dialog.alert('Component mounted')
+    })
   }
-};
+}
 </script>
 
 <style>
