@@ -9,7 +9,12 @@
       <f7-view url="/panel-right/"></f7-view>
     </f7-panel>
     <!-- initial page is specified in routes.js -->
-    <f7-view url="/" :main="true" class="safe-areas" :master-detail-breakpoint="800"></f7-view>
+    <f7-view
+      url="/"
+      :main="true"
+      class="safe-areas"
+      :master-detail-breakpoint="800"
+    ></f7-view>
   </f7-app>
 </template>
 
@@ -54,7 +59,11 @@ export default {
   },
   mounted () {
     this.$f7ready(f7 => {
-      console.log('s', f7)
+      console.log('f7', f7)
+      if (!!window.cordova && !!window.StatusBar && window.cordova.platformId === 'android') {
+        // window.StatusBar.overlaysWebView(true)
+        window.StatusBar.backgroundColorByHexString('#ff00bcd4')
+      }
       f7.dialog.alert('Component mounted')
     })
   }
