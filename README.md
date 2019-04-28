@@ -1,4 +1,4 @@
-# mi-note-vue
+# vue-f7-cordova
 
 ## Project setup
 ```
